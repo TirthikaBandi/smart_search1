@@ -14,7 +14,10 @@
       #navbarSupportedContent{
       font-size: 12px;
       }
-
+      /*not working*/
+      #content{
+          top: 200%;
+      }
       a{
         text-decoration: none;
         color: black;
@@ -28,20 +31,24 @@
         font-size: 18px;
       }
 
-      .content{
-        text-align: justify;
-        margin-left: 10px;
-    
-        padding: 10px;
-      }
+      .form-container{
+        width: 320px; 
+        background-color:#D3D3D3;
+        padding: 20px;
 
+        position: fixed;
+        top: 35%;
+        left: 50%;
+        margin-top: -100px;
+        margin-left: -200px;
+      }
     </style>
-    <link rel="stylesheet" src="upload.css">
+    <link rel="stylesheet" src="home.css">
   </head>
   <body>
     <!--navbar-->
 
-        <div class="container-fluid">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-4 col-sm-12 pr-5 py-4">
               <a class="navbar-brand" href="#"><label class="display-4">Smart Search</label></a>
@@ -90,25 +97,81 @@
         </div>      
     </div>
 
-    <!--about us-->
-    <div>
-        <div style="text-align: center;">
-            <h2 class="mx-5 pt-5">About us</h2>
-        </div>
-        <div class="row mx-5" >
-            <div class="col-md-6 col-sm-12 px-5 py-5">
-              <img src="images/about_us.png" style="height: 100%; width: 100%;">
+    <!--edit profile-->
+    <div class="form-container">
+      <form class="needs-validation" novalidate>
+        <div class="form-row">
+          <div class="col-md-12 mb-3">
+            <label for="validationCustom01">Username</label>
+            <input type="text" class="form-control" id="validationCustom01" value="" required>
+            <div class="valid-feedback">
+              Looks good!
             </div>
-            <div class="col-md-6 col-sm-12 px-5 py-5">
-              <p class="mx-5" class="content">
-                <h6>
-                  SMART SEARCH is an application that simplifies your searches of content in videos. In case you are looking for a particular topic inside a lecture video you don't have to waste time navigating through the whole video looking for that specific part SMART SEARCH will do it for you. You can just type in the topic and get to the part of the video where the topic has been talked about by clicking on the timestamp thus generated. So storing the user data and the lectures and deploying an application will be a good option. For deploying this application I will use AWS platform.
-                </h6>
-              </p>
+          </div>
+          <div class="col-md-12 mb-3">
+            <label for="validationCustom02">Name</label>
+            <input type="text" class="form-control" id="validationCustom02" value="" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-12 mb-3">
+            <label for="validationCustom03">Email</label>
+            <input type="email" class="form-control" id="validationCustom03" required>
+            <div class="invalid-feedback">
+              Please provide a valid email.
+            </div>
+          </div>
+          <div class="col-md-12 mb-3">
+            <label for="validationCustom05">Password</label>
+            <input type="password" class="form-control" id="validationCustom05" required>
+            <div class="invalid-feedback">
+              Please provide a valid password.
+            </div>
+          </div>
+          <div class="col-md-12 mb-3">
+            <label for="validationCustom06"> Confirm Password</label>
+            <input type="password" class="form-control" id="validationCustom05" required>
+            <div class="invalid-feedback">
+              Please provide a valid password.
+            </div>
+          </div>
+        </div>
+        <div>
+            <div class="container h-100"> 
+                <div class="d-flex h-100"> 
+                    <div class="align-self-center mx-auto" style="padding: 10px;">
+                        <button class="btn btn-primary" type="submit">Save changes</button>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    
+      </form>
+  </div>
+        
+  <script>
+  // Example starter JavaScript for disabling form submissions if there are invalid fields
+  (function() {
+    'use strict';
+    window.addEventListener('load', function() {
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.getElementsByClassName('needs-validation');
+      // Loop over them and prevent submission
+      var validation = Array.prototype.filter.call(forms, function(form) {
+        form.addEventListener('submit', function(event) {
+          if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    }, false);
+  })();
+  </script>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

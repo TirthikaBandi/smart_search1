@@ -1,40 +1,3 @@
-<?php
-  include("./config.php");
-  session_start();
-
-  if($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['email'])) {
-    // username and password sent from form
-    $email = mysqli_real_escape_string($db,$_GET['email']);
-    $username = mysqli_real_escape_string($db,$_GET['username']);
-    $name = mysqli_real_escape_string($db,$_GET['name']);
-    $password = mysqli_real_escape_string($db,$_GET['password']);
-
-
-    $insertQuery = "INSERT INTO `users`( `user_name`, `user_full_name`, `user_email`, `user_pass`) VALUES ('{$username}', '{$name}', '{$email}' ,'{$password}')";
-    if ($db->query($insertQuery) === TRUE) {
-      echo "New record created successfully";
-    } else {
-      echo "Error: " . $sql . "<br>" . $conn->error;
-    }
-
-    $sql = "SELECT user_id FROM users order by user_id desc limit 1";
-      $result = $db->query($sql);
-
-      $user_id = 0;
-      if ($result->num_rows > 0) {
-        // output data of each row
-        while($row = $result->fetch_assoc()) {
-          echo "id: " . $row["user_id"];
-          $user_id = $row["user_id"];
-          $_SESSION['user_id'] = $row["user_id"];
-        }
-        header('location: ./home.php');
-      }
-
-    echo "<script>".$email."</script>";
-}
-
-?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -48,7 +11,7 @@
     <!--css-->
     <style>
         .form-container{
-            width: 500px; 
+            width: 320px; 
             background-color: white;
             padding: 20px;
 
@@ -64,48 +27,46 @@
   <body style="background-color: gray;">
       <div class="form-container">
           <img src="images\logo.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 50%;">
-        <form class="needs-validation" method="GET" action="./signin.php" novalidate>
+        <form class="needs-validation" novalidate>
             <div class="form-row">
-              <div class="col-md-6 mb-3">
-                <label for="validationCustom01">Username</label>
-                <input type="text" class="form-control" id="validationCustom01" name="username" value="" required>
-                <div class="valid-feedback">
-                  Looks good!
-                </div>
-              </div>
-              <div class="col-md-6 mb-3">
-                <label for="validationCustom02">Name</label>
-                <input type="text" class="form-control" id="validationCustom02" name="name" value="" required>
-                <div class="valid-feedback">
-                  Looks good!
-                </div>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="col-md-6 mb-3">
+              <div class="col-md-12 mb-3">
                 <label for="validationCustom03">Email</label>
-                <input type="email" class="form-control" id="validationCustom03" name="email" required>
+                <input type="email" class="form-control" id="validationCustom03" required>
                 <div class="invalid-feedback">
                   Please provide a valid email.
                 </div>
               </div>
-              <div class="col-md-6 mb-3">
+            </div>
+            <div class="form-row">
+              <div class="col-md-12 mb-3">
                 <label for="validationCustom05">Password</label>
-                <input type="password" class="form-control" id="validationCustom05" name="password" required>
+                <input type="password" class="form-control" id="validationCustom05" required>
                 <div class="invalid-feedback">
                   Please provide a valid password.
                 </div>
               </div>
             </div>
             <div>
-                <button class="btn btn-primary" type="submit">Signup</button><br>
-                <label>Already have an account?<a href="login.php">login</a></label>
+                <div class="container h-100"> 
+                    <div class="d-flex h-100"> 
+                        <div class="align-self-center mx-auto" style="padding: 10px;">
+                            <button class="btn btn-primary" type="submit">Login</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="container h-100"> 
+                    <div class="d-flex h-100"> 
+                        <div class="align-self-center mx-auto" style="padding: 10px;">
+                            <label>Don't have an account? <a href="signin.html"><b>Sign up</b></a></label>
+                        </div>
+                    </div>
+                </div>
             </div>
           </form>
       </div>
    
       
-      <!-- <script>
+      <script>
       // Example starter JavaScript for disabling form submissions if there are invalid fields
       (function() {
         'use strict';
@@ -120,19 +81,11 @@
                 event.stopPropagation();
               }
               form.classList.add('was-validated');
-
-              /*var email = document.getElementById('validationCustom01');
-              var theUrl = "./signin?email=";
-              theUrl = theUrl.concat(email);
-              console.log(theUrl);
-              var xmlHttp = new XMLHttpRequest();
-              xmlHttp.open("GET", theUrl, true); // true for asynchronous 
-              xmlHttp.send(null);*/
             }, false);
           });
         }, false);
       })();
-      </script> -->
+      </script>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

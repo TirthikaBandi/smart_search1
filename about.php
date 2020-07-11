@@ -27,14 +27,6 @@
       .nav-link{
         font-size: 18px;
       }
-
-      .content{
-        text-align: justify;
-        margin-left: 10px;
-    
-        padding: 10px;
-      }
-
     </style>
     <link rel="stylesheet" src="upload.css">
   </head>
@@ -57,16 +49,16 @@
                 <div class="collapse navbar-collapse " id="navbarSupportedContent">
                   <ul class="nav">
                     <li class="nav-item mx-2 py-4 active">
-                      <a class="nav-link " href="home.html">HOME <span class="sr-only">(current)</span></a>
+                      <a class="nav-link " href="home.php">HOME <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item mx-2 py-4">
-                      <a class="nav-link " href="search.html">SEARCH</a>
+                      <a class="nav-link " href="search.php">SEARCH</a>
                     </li>
                     <li class="nav-item mx-2 py-4">
-                      <a class="nav-link" href="upload.html">UPLOAD</a>
+                      <a class="nav-link" href="upload.php">UPLOAD</a>
                     </li>
                     <li class="nav-item mx-2 py-4">
-                      <a class="nav-link" href="about.html">ABOUT</a>
+                      <a class="nav-link" href="about.php">ABOUT</a>
                     </li>
                   </ul>
                 </div>
@@ -81,8 +73,8 @@
                       </a>
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#">username</a>
-                        <a class="dropdown-item" href="profile.html">Profile</a>
-                        <a class="dropdown-item" href="index.html">Sign out</a>
+                        <a class="dropdown-item" href="#">Profile</a>
+                        <a class="dropdown-item" href="#">Sign out</a>
                     </li>
                 </div>
               </li>
@@ -92,20 +84,19 @@
 
     <!--about us-->
     <div>
-        <div style="text-align: center;">
+        <div>
             <h2 class="mx-5 pt-5">About us</h2>
         </div>
         <div class="row mx-5" >
-            <div class="col-md-6 col-sm-12 px-5 py-5">
-              <img src="images/about_us.png" style="height: 100%; width: 100%;">
+            <div class="col-md-4 col-sm-12 px-5 py-5">
+              <img src="images/about_us.png">
             </div>
-            <div class="col-md-6 col-sm-12 px-5 py-5">
-              <p class="mx-5" class="content">
-                <h6>
-                  SMART SEARCH is an application that simplifies your searches of content in videos. In case you are looking for a particular topic inside a lecture video you don't have to waste time navigating through the whole video looking for that specific part SMART SEARCH will do it for you. You can just type in the topic and get to the part of the video where the topic has been talked about by clicking on the timestamp thus generated. So storing the user data and the lectures and deploying an application will be a good option. For deploying this application I will use AWS platform.
-                </h6>
-              </p>
-            </div>
+            <div class="col-md-8 col-sm-12 px-5 py-5">
+            <h4 class="mx-5">Objective</h4>
+            <p class="mx-5">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod ipsam molestias sequi fuga aliquid deleniti nobis repellat aspernatur natus impedit explicabo consequatur, expedita eaque consequuntur saepe optio amet possimus? Cupiditate?
+            </p>
+          </div>
         </div>
     </div>
     
