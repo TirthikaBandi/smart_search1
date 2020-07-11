@@ -1,5 +1,6 @@
-<!DOCTYPE php>
-<php lang="en">
+<?php session_start(); ?>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -80,9 +81,9 @@
                         SIGN IN AS
                       </a>
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">username</a>
+                        <a class="dropdown-item" href="#"><?php echo $_SESSION['user_name'] ?></a>
                         <a class="dropdown-item" href="profile.php">Profile</a>
-                        <a class="dropdown-item" href="index.html">Sign out</a>
+                        <a class="dropdown-item" href="logout.php">Sign out</a>
                     </li>
                 </div>
               </li>
@@ -116,4 +117,4 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   </body>
-</php>
+</html>

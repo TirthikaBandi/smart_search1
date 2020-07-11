@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -71,9 +72,9 @@
                         SIGN IN AS
                       </a>
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">username</a>
+                        <a class="dropdown-item" href="#"><?php echo $_SESSION['user_name'] ?></a>
                         <a class="dropdown-item" href="profile.php">Profile</a>
-                        <a class="dropdown-item" href="index.html">Sign out</a>
+                        <a class="dropdown-item" href="logout.php">Sign out</a>
                     </li>
                 </div>
               </li>

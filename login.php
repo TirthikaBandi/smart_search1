@@ -1,3 +1,33 @@
+<?php 
+  include("./config.php");
+  session_start();
+  if($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['email'])) {
+      $email = $_GET['email'];
+      $pass = $_GET['password'];
+
+      $sql = "SELECT * FROM users where user_email = '{$email}' and user_pass='{$pass}' order by user_id";
+      $result = $db->query($sql);
+      echo $sql;
+      $user_id = 0;
+      if ($result->num_rows > 0) {
+        // output data of each row
+        while($row = $result->fetch_assoc()) {
+          echo "id: " . $row["user_id"];
+          $user_id = $row["user_id"];
+          $_SESSION['user_id'] = $row["user_id"];
+          $_SESSION['user_name'] = $row['user_name'];
+          $_SESSION['user_email'] = $row['user_email'];
+          $_SESSION['name'] = $row['user_full_name'];
+        }
+        header('location: ./home.php');
+      }else{
+        header('location: ./login.php?error="Invalid credentials"');
+          echo "<script>Invalid Credentials</script>";
+      }
+
+
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -22,12 +52,12 @@
             margin-left: -200px;
         }
     </style>
-    <title>Smart Search - signup</title>
+    <title>Smart Search - login</title>
   </head>
   <body style="background-color: gray;">
       <div class="form-container">
           <img src="images\logo.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 50%;">
-        <form class="needs-validation" novalidate>
+        <form class="needs-validation" method="GET" action="./login.php" novalidate>
             <div class="form-row">
               <div class="col-md-12 mb-3">
                 <label for="validationCustom03">Email</label>
@@ -45,6 +75,11 @@
                   Please provide a valid password.
                 </div>
               </div>
+            </div>
+            <div class="form-row">
+              <p style="color: red;"> <?php 
+                  if(isset($_GET['error']))echo $_GET['error'];
+                  ?> </p>
             </div>
             <div>
                 <div class="container h-100"> 
@@ -64,29 +99,7 @@
             </div>
           </form>
       </div>
-   
-      
-      <script>
-      // JavaScript for disabling form submissions if there are invalid fields
-      (function() {
-        'use strict';
-        window.addEventListener('load', function() {
-          // Fetch all the forms we want to apply custom Bootstrap validation styles to
-          var forms = document.getElementsByClassName('needs-validation');
-          // Loop over them and prevent submission
-          var validation = Array.prototype.filter.call(forms, function(form) {
-            form.addEventListener('submit', function(event) {
-              if (form.checkValidity() === false) {
-                event.preventDefault();
-                event.stopPropagation();
-              }
-              form.classList.add('was-validated');
-            }, false);
-          });
-        }, false);
-      })();
-      </script>
-
+  
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

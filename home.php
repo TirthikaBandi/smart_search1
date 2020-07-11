@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -53,16 +54,16 @@
                 <div class="collapse navbar-collapse " id="navbarSupportedContent">
                   <ul class="nav">
                     <li class="nav-item mx-2 py-4 active">
-                      <a class="nav-link " href="home.html">HOME <span class="sr-only">(current)</span></a>
+                      <a class="nav-link " href="home.php">HOME <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item mx-2 py-4">
-                      <a class="nav-link " href="search.html">SEARCH</a>
+                      <a class="nav-link " href="search.php">SEARCH</a>
                     </li>
                     <li class="nav-item mx-2 py-4">
-                      <a class="nav-link" href="upload.html">UPLOAD</a>
+                      <a class="nav-link" href="upload.php">UPLOAD</a>
                     </li>
                     <li class="nav-item mx-2 py-4">
-                      <a class="nav-link" href="about.html">ABOUT</a>
+                      <a class="nav-link" href="about.php">ABOUT</a>
                     </li>
                   </ul>
                 </div>
@@ -76,9 +77,9 @@
                         SIGN IN AS
                       </a>
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">username</a>
-                        <a class="dropdown-item" href="profile.html">Profile</a>
-                        <a class="dropdown-item" href="index.html">Sign out</a>
+                        <a class="dropdown-item" href="#"><?php echo $_SESSION['user_name'] ?></a>
+                        <a class="dropdown-item" href="profile.php">Profile</a>
+                        <a class="dropdown-item" href="logout.php">Sign out</a>
                     </li>
                 </div>
               </li>
@@ -87,7 +88,7 @@
     </div>
 
 
-    <!--display videos-->
+    <!-- make it dynamic , display videos-->
     <div class="container" id="content">
       <div class="row row-cols-3 py-5">
         <div class="col">
