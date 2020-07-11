@@ -53,7 +53,7 @@
             padding: 20px;
 
             position: fixed;
-            top: 35%;
+            top: 20%;
             left: 50%;
             margin-top: -100px;
             margin-left: -200px;
@@ -64,46 +64,57 @@
   <body style="background-color: gray;">
       <div class="form-container">
           <img src="images\logo.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 50%;">
-        <form class="needs-validation" method="GET" action="./signin.php" novalidate>
+        <form class="needs-validation" novalidate>
             <div class="form-row">
-              <div class="col-md-6 mb-3">
+              <div class="col-md-12 mb-3">
                 <label for="validationCustom01">Username</label>
-                <input type="text" class="form-control" id="validationCustom01" name="username" value="" required>
+                <input type="text" class="form-control" id="validationCustom01" value="" required>
                 <div class="valid-feedback">
                   Looks good!
                 </div>
               </div>
-              <div class="col-md-6 mb-3">
+              <div class="col-md-12 mb-3">
                 <label for="validationCustom02">Name</label>
-                <input type="text" class="form-control" id="validationCustom02" name="name" value="" required>
+                <input type="text" class="form-control" id="validationCustom02" value="" required>
                 <div class="valid-feedback">
                   Looks good!
                 </div>
               </div>
             </div>
             <div class="form-row">
-              <div class="col-md-6 mb-3">
+              <div class="col-md-12 mb-3">
                 <label for="validationCustom03">Email</label>
-                <input type="email" class="form-control" id="validationCustom03" name="email" required>
+                <input type="email" class="form-control" id="validationCustom03" required>
                 <div class="invalid-feedback">
                   Please provide a valid email.
                 </div>
               </div>
-              <div class="col-md-6 mb-3">
+              <div class="col-md-12 mb-3">
                 <label for="validationCustom05">Password</label>
-                <input type="password" class="form-control" id="validationCustom05" name="password" required>
+                <input type="password" class="form-control" id="validationCustom05" required>
                 <div class="invalid-feedback">
                   Please provide a valid password.
                 </div>
               </div>
             </div>
             <div>
-                <button class="btn btn-primary" type="submit">Signup</button><br>
-                <label>Already have an account?<a href="login.php">login</a></label>
+                <div class="container h-100"> 
+                    <div class="d-flex h-100"> 
+                        <div class="align-self-center mx-auto" style="padding: 10px;">
+                            <button class="btn btn-primary" type="submit">Signup</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="container h-100"> 
+                    <div class="d-flex h-100"> 
+                        <div class="align-self-center mx-auto" style="padding: 10px;">
+                            <label>Already have an account? <a href="login.php"><b>login</b></a></label>
+                        </div>
+                    </div>
+                </div>
             </div>
           </form>
-      </div>
-   
+      </div>   
       
       <!-- <script>
       // Example starter JavaScript for disabling form submissions if there are invalid fields

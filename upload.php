@@ -28,8 +28,7 @@
         font-size: 18px;
       }
     </style>
-    <link rel="stylesheet" src="upload.css">
-  </head>
+    </head>
   <body>
     <!--navbar-->
 
@@ -49,7 +48,7 @@
                 <div class="collapse navbar-collapse " id="navbarSupportedContent">
                   <ul class="nav">
                     <li class="nav-item mx-2 py-4 active">
-                      <a class="nav-link " href="#">HOME <span class="sr-only">(current)</span></a>
+                      <a class="nav-link " href="home.php">HOME <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item mx-2 py-4">
                       <a class="nav-link " href="search.php">SEARCH</a>
@@ -73,8 +72,8 @@
                       </a>
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#">username</a>
-                        <a class="dropdown-item" href="#">Profile</a>
-                        <a class="dropdown-item" href="#">Sign out</a>
+                        <a class="dropdown-item" href="profile.php">Profile</a>
+                        <a class="dropdown-item" href="index.html">Sign out</a>
                     </li>
                 </div>
               </li>

@@ -57,7 +57,7 @@
                 <div class="container h-100"> 
                     <div class="d-flex h-100"> 
                         <div class="align-self-center mx-auto" style="padding: 10px;">
-                            <label>Don't have an account? <a href="signin.html"><b>Sign up</b></a></label>
+                            <label>Don't have an account? <a href="signin.php"><b>Sign up</b></a></label>
                         </div>
                     </div>
                 </div>
@@ -67,7 +67,7 @@
    
       
       <script>
-      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      // JavaScript for disabling form submissions if there are invalid fields
       (function() {
         'use strict';
         window.addEventListener('load', function() {

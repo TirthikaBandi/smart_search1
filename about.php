@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE php>
+<php lang="en">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -27,10 +27,18 @@
       .nav-link{
         font-size: 18px;
       }
+
+      .content{
+        text-align: justify;
+        margin-left: 10px;
+    
+        padding: 10px;
+      }
+
     </style>
-    <link rel="stylesheet" src="upload.css">
   </head>
   <body>
+    
     <!--navbar-->
 
         <div class="container-fluid">
@@ -64,7 +72,7 @@
                 </div>
             </nav>
 
-            </div>
+            </div>  
             <div class="col-md-4 col-sm-12 py-5 ">
               <ul class="nav ml-5 pl-5 py-2">
               <li class="nav-item dropdown ml-5 pl-5" class="nav justify-content-end">
@@ -73,8 +81,8 @@
                       </a>
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#">username</a>
-                        <a class="dropdown-item" href="#">Profile</a>
-                        <a class="dropdown-item" href="#">Sign out</a>
+                        <a class="dropdown-item" href="profile.php">Profile</a>
+                        <a class="dropdown-item" href="index.html">Sign out</a>
                     </li>
                 </div>
               </li>
@@ -84,19 +92,20 @@
 
     <!--about us-->
     <div>
-        <div>
+        <div style="text-align: center;">
             <h2 class="mx-5 pt-5">About us</h2>
         </div>
         <div class="row mx-5" >
-            <div class="col-md-4 col-sm-12 px-5 py-5">
-              <img src="images/about_us.png">
+            <div class="col-md-6 col-sm-12 px-5 py-5">
+              <img src="images/about_us.png" style="height: 100%; width: 100%;">
             </div>
-            <div class="col-md-8 col-sm-12 px-5 py-5">
-            <h4 class="mx-5">Objective</h4>
-            <p class="mx-5">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod ipsam molestias sequi fuga aliquid deleniti nobis repellat aspernatur natus impedit explicabo consequatur, expedita eaque consequuntur saepe optio amet possimus? Cupiditate?
-            </p>
-          </div>
+            <div class="col-md-6 col-sm-12 px-5 py-5">
+              <p class="mx-5" class="content">
+                <h6>
+                  SMART SEARCH is an application that simplifies your searches of content in videos. In case you are looking for a particular topic inside a lecture video you don't have to waste time navigating through the whole video looking for that specific part SMART SEARCH will do it for you. You can just type in the topic and get to the part of the video where the topic has been talked about by clicking on the timestamp thus generated. So storing the user data and the lectures and deploying an application will be a good option. For deploying this application I will use AWS platform.
+                </h6>
+              </p>
+            </div>
         </div>
     </div>
     
@@ -107,4 +116,4 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   </body>
-</html>
+</php>

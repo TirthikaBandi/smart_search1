@@ -17,6 +17,7 @@
       /*not working*/
       #content{
           top: 200%;
+          background-color: #D3D3D3;
       }
       a{
         text-decoration: none;
@@ -31,9 +32,9 @@
         font-size: 18px;
       }
     </style>
-    <link rel="stylesheet" src="home.css">
   </head>
   <body>
+    
     <!--navbar-->
 
     <div class="container-fluid">
@@ -52,16 +53,16 @@
                 <div class="collapse navbar-collapse " id="navbarSupportedContent">
                   <ul class="nav">
                     <li class="nav-item mx-2 py-4 active">
-                      <a class="nav-link " href="#">HOME <span class="sr-only">(current)</span></a>
+                      <a class="nav-link " href="home.html">HOME <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item mx-2 py-4">
-                      <a class="nav-link " href="search.php">SEARCH</a>
+                      <a class="nav-link " href="search.html">SEARCH</a>
                     </li>
                     <li class="nav-item mx-2 py-4">
-                      <a class="nav-link" href="upload.php">UPLOAD</a>
+                      <a class="nav-link" href="upload.html">UPLOAD</a>
                     </li>
                     <li class="nav-item mx-2 py-4">
-                      <a class="nav-link" href="about.php">ABOUT</a>
+                      <a class="nav-link" href="about.html">ABOUT</a>
                     </li>
                   </ul>
                 </div>
@@ -76,8 +77,8 @@
                       </a>
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#">username</a>
-                        <a class="dropdown-item" href="#">Profile</a>
-                        <a class="dropdown-item" href="#">Sign out</a>
+                        <a class="dropdown-item" href="profile.html">Profile</a>
+                        <a class="dropdown-item" href="index.html">Sign out</a>
                     </li>
                 </div>
               </li>
@@ -119,6 +120,7 @@
         </div>
       </div>
     </div>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
